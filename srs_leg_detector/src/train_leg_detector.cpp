@@ -117,14 +117,16 @@ public:
     {
  
            sensor_msgs::LaserScan::ConstPtr scanptr = m.instantiate<sensor_msgs::LaserScan>();
-           
+            
+
+
            if (scanptr != NULL)
            {
 
            switch (load)   
              {
               case LOADING_BACKGROUND:
-               loadBackground ( &(sensor_msgs::LaserScan(*scanptr)));  
+               loadBackground ( scanptr);  
                break;
 
               case LOADING_POS:
